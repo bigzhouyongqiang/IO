@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'war'
+
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+def groupIdParam = 'com.zhouyq'
+def artifactIdParam = 'io'
+def versionParam = '1.1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+//	maven {
+//        url "http://nexus3.koal.com:8081/repository/maven-public/"
+//    }
+}
+
+dependencies {
+
+	
+}
+
+sourceSets {
+	main {
+        resources {
+            srcDir 'src/main/resources'
+            srcDir 'src/main/java'
+        }
+    }   
+   	test {
+        java {
+            srcDir 'src/test/tools'
+        }
+    }
+}
